@@ -168,7 +168,7 @@ fun RegisterScreen(
                         contentAlignment = Alignment.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.icon),
+                            painter = painterResource(id = R.drawable.logo_orange),
                             contentDescription = "MyBank Logo",
                             modifier = Modifier
                                 .fillMaxSize()

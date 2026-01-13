@@ -364,7 +364,7 @@ private fun CardsSection(
             listOf(
                 CardData("Salary", 2230.0, "6917", "01/04", 0),
                 CardData("Credit card", 5230.0, "4433", "02/04", 1),
-                CardData("Credit card", 985.0, "1788", "03/04", 2)
+                CardData("Debit card", 985.0, "1788", "03/04", 2)
             )
         } else {
             accounts.take(3).mapIndexed { index, account ->

@@ -121,14 +121,14 @@ fun LoginScreen(
                             .shadow(
                                 elevation = 24.dp,
                                 shape = CircleShape,
-                                spotColor = PurplePrimary.copy(alpha = 0.4f)
+                                spotColor = WarningYellow.copy(alpha = 0.4f)
                             )
                             .clip(CircleShape)
                             .background(Color.White),
                         contentAlignment = Alignment.Center
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.icon),
+                            painter = painterResource(id = R.drawable.logo_orange),
                             contentDescription = "MyBank Logo",
                             modifier = Modifier
                                 .fillMaxSize()

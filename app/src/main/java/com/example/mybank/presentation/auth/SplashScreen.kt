@@ -22,9 +22,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mybank.R
+import com.example.mybank.ui.theme.GlassShadow
+import com.example.mybank.ui.theme.WarningYellow
 import kotlinx.coroutines.delay
 
 // ====================== PREMIUM COLORS ======================
@@ -39,14 +42,15 @@ private val TextWhite = Color(0xFFFFFFFF)
 
 private val SplashGradient = Brush.verticalGradient(
     colors = listOf(
-        Color(0xFFE0D8FF),
-        Color(0xFFECE6FF),
+        Color(0xFFFFD84D),
+        Color(0x1A8B7FFF),
         Color(0xFFF5F1FF),
-        Color(0xFFFFFBFF)
+        Color(0xFFB0B0B0)
     )
 )
 
 @Composable
+
 fun SplashScreen(
     isAuthenticated: Boolean,
     onNavigateToLogin: () -> Unit,
@@ -264,7 +268,7 @@ private fun SplashBackgroundBlobs() {
 // ====================== PREMIUM APP LOGO WITH ICON ======================
 @Composable
 private fun PremiumAppLogo() {
-    val infiniteTransition = rememberInfiniteTransition(label = "logo")
+    val infiniteTransition = rememberInfiniteTransition(label = "logo_orange")
     
     val glowAlpha by infiniteTransition.animateFloat(
         initialValue = 0.4f,
@@ -300,8 +304,8 @@ private fun PremiumAppLogo() {
                 .background(
                     Brush.radialGradient(
                         colors = listOf(
-                            PurplePrimary,
-                            PinkPrimary.copy(alpha = 0.5f),
+                            WarningYellow,
+                            GlassShadow.copy(alpha = 0.5f),
                             Color.Transparent
                         )
                     ),
@@ -316,7 +320,7 @@ private fun PremiumAppLogo() {
                 .shadow(
                     elevation = 30.dp,
                     shape = CircleShape,
-                    spotColor = PurplePrimary.copy(alpha = 0.5f)
+                    spotColor = WarningYellow.copy(alpha = 0.5f)
                 )
                 .clip(CircleShape)
                 .background(Color.White),
@@ -324,7 +328,7 @@ private fun PremiumAppLogo() {
         ) {
             // App Icon from drawable - fits inside white container
             Image(
-                painter = painterResource(id = R.drawable.icon),
+                painter = painterResource(id = R.drawable.logo_orange),
                 contentDescription = "MyBank Logo",
                 modifier = Modifier
                     .fillMaxSize()
@@ -380,12 +384,12 @@ private fun LoadingDots() {
                     .size(10.dp)
                     .scale(scale)
                     .alpha(alpha)
-                    .shadow(4.dp, CircleShape, spotColor = PurplePrimary.copy(alpha = 0.3f))
+                    .shadow(4.dp, CircleShape, spotColor = WarningYellow.copy(alpha = 0.3f))
                     .background(
                         Brush.radialGradient(
                             colors = listOf(
-                                PurplePrimary,
-                                PurpleMedium
+                                WarningYellow,
+                                GlassShadow
                             )
                         ),
                         CircleShape
